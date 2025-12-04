@@ -1,0 +1,20 @@
+function joinAndMap(array1, array2, callback) {
+    // create a new array
+    const newArray = [];
+    // combine the two input arrays
+    const joinedArray = array1.concat(array2)
+
+    // iterate through each element of the joined array
+    for (let i = 0; i < joinedArray.length; i++) {
+        // invoke the callback function on each element and add it to the newArray
+        newArray.push(callback(joinedArray[i]));
+    }
+    // return the newArray
+    return newArray;
+}
+
+// Uncomment these to check your work!
+const arrRed = ['strawberry', 'cherry', 'wine'];
+const arrBlue = ['blueberry', 'sky', 'ocean'];
+const capitalize = str => str.toUpperCase();
+console.log(joinAndMap(arrRed, arrBlue, capitalize)); // should log: ['STRAWBERRY', 'CHERRY', 'WINE', 'BLUEBERRY', 'SKY', 'OCEAN']

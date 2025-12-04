@@ -1,0 +1,17 @@
+function arrToObj(array, callback) {
+    // create an obj to store results
+    const results = {};
+
+    // create a loop to iterate through each element of array
+    for (let i = 0; i < array.length; i++) {
+        // invoke callback function on each element and assign it to the results
+        results[array[i]] = callback(array[i]);
+    }
+    // return results
+    return results;
+}
+
+// Uncomment these to check your work!
+const arrOfStrings = ['beer', 'glue'];
+const capitalize = str => str.toUpperCase();
+console.log(arrToObj(arrOfStrings, capitalize)); // should log: { beer: 'BEER', glue: 'GLUE' }
