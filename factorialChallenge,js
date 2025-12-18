@@ -1,0 +1,10 @@
+function factorial(num) {
+    if (num === 1) { // base case - if num is equal to 1, return num
+        return num;
+    }
+
+    return num * factorial(num - 1);// recursively call factorial with factored num called in
+}
+
+console.log(factorial(4)); // -> 24
+console.log(factorial(6)); // -> 720
