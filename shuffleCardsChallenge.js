@@ -5,7 +5,7 @@ function shuffleCards(topHalf, bottomHalf) {
     }
     return bottomHalf; // otherwise, add remaining bottomHalf cards to end of newArray
   }
-  
+
   return [topHalf[0], bottomHalf[0], ...shuffleCards(topHalf.slice(1), bottomHalf.slice(1))]; // return our new array with the topHalf first card, bottomHalf first card, and then the rest of the cards, which will be recursively called to be sorted
 }
 
