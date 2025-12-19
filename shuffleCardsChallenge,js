@@ -1,0 +1,24 @@
+function shuffleCards(topHalf, bottomHalf) {
+  if (topHalf.length === 0 || bottomHalf.length === 0) { // base case: if no cards remain in top half or bottom half, add remaining cards into the return the newArray
+    if (topHalf.length > 0) { // if the top half still has elements...
+      return topHalf; // return remaining topHalf elements to the end of recursed array
+    }
+    return bottomHalf; // otherwise, add remaining bottomHalf cards to end of newArray
+  }
+  
+  return [topHalf[0], bottomHalf[0], ...shuffleCards(topHalf.slice(1), bottomHalf.slice(1))]; // return our new array with the topHalf first card, bottomHalf first card, and then the rest of the cards, which will be recursively called to be sorted
+}
+
+
+// UNCOMMENT TO TEST YOUR WORK
+const topHalf = ['Queen of Diamonds', 'Five of Hearts', 'Ace of Spades', 'Eight of Clubs'];
+const bottomHalf = ['Jack of Hearts', 'Ten of Spades'];
+console.log(shuffleCards(topHalf, bottomHalf));
+//   /*-> ['Queen of Diamonds',
+//         'Jack of Hearts',
+//         'Five of Hearts',
+//         'Ten of Spades',
+//         'Ace of Spades',
+//         'Eight of Clubs',
+//       ]
+//   */
