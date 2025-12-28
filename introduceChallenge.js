@@ -21,4 +21,4 @@ const sandra = personFromPersonStore('Sandra', 26);
 
 
 // Uncomment this line to check your work!
-sandra.introduce(); // -> Logs 'Hi, my name is Sandra'
+sandra.introduce(); // -> Logs 'Hi, my name is Sandra'git
